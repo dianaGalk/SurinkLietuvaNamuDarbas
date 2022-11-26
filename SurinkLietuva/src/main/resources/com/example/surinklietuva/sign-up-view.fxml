@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="428.0" prefWidth="294.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.surinklietuva.Controllers.SignUpView">
+   <children>
+      <TextField fx:id="nameField" layoutX="34.0" layoutY="41.0" />
+      <TextField fx:id="surnameField" layoutX="34.0" layoutY="98.0" />
+      <TextField fx:id="loginField" layoutX="34.0" layoutY="152.0" />
+      <TextField fx:id="emailField" layoutX="34.0" layoutY="211.0" />
+      <PasswordField fx:id="passwordField" layoutX="34.0" layoutY="261.0" />
+      <PasswordField fx:id="confirmPasswordField" layoutX="34.0" layoutY="318.0" />
+      <Label layoutX="39.0" layoutY="23.0" text="Vardas" />
+      <Label layoutX="39.0" layoutY="80.0" text="Pavardė" />
+      <Label layoutX="34.0" layoutY="134.0" text="Prisijungimo vardas" />
+      <Label layoutX="34.0" layoutY="193.0" text="Elektroninis paštas" />
+      <Label layoutX="37.0" layoutY="243.0" text="Slaptažodis" />
+      <Label layoutX="38.0" layoutY="283.0" style="-fx-font-size: 10" text="Simbolių skaičius nei ilgesnis už 15 simbolių" />
+      <Label layoutX="39.0" layoutY="300.0" text="Patvirtinkite slaptažodį" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="388.0" mnemonicParsing="false" onAction="#returnToPrevious" prefHeight="25.0" prefWidth="68.0" text="Atlgal" />
+      <Button fx:id="signUpButton" layoutX="200.0" layoutY="388.0" mnemonicParsing="false" onAction="#createUser" text="Registruotis" />
+   </children>
+</AnchorPane>

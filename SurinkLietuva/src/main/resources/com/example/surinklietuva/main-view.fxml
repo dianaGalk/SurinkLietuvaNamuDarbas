@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="325.0" prefWidth="489.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.surinklietuva.Controllers.MainView">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Paskyra">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="336.0" prefWidth="319.0">
+                     <children>
+                        <Text fx:id="nameSurnameField" layoutX="18.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NameSurname">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text fx:id="emailField" layoutX="18.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Text fx:id="MagnetsNumber" layoutX="18.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Text>
+                        <Button fx:id="logoutButton" layoutX="20.0" layoutY="332.0" mnemonicParsing="false" onAction="#logout" text="Atsijungti" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Mano magnetukai">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="addButton" layoutX="274.0" layoutY="86.0" mnemonicParsing="false" onAction="#addMagnet" text="-&gt;" />
+                        <Text fx:id="magnetsNum" layoutX="278.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                        <Button fx:id="removeButton" layoutX="274.0" layoutY="200.0" mnemonicParsing="false" onAction="#remove" text="&lt;-" />
+                        <ListView fx:id="MagnetsListOfView" layoutX="356.0" layoutY="45.0" prefHeight="278.0" prefWidth="225.0" />
+                        <ListView fx:id="missingMagnetsListOfView" layoutX="29.0" layoutY="44.0" prefHeight="282.0" prefWidth="200.0" />
+                         <ChoiceBox fx:id="regionChoiceBox" layoutX="29.0" layoutY="14.0" prefHeight="26.0" prefWidth="201.0" value="Visi duomenis">
+                             <items>
+                                 <FXCollections fx:factory="observableArrayList">
+                                     <String fx:value="Visi duomenis" />
+                                     <String fx:value="Vilniaus apskritis" />
+                                     <String fx:value="Kauno apskritis" />
+                                     <String fx:value="Klaipėdos apskritis" />
+                                     <String fx:value="Šiaulių apskritis" />
+                                     <String fx:value="Telšių apskritis" />
+                                     <String fx:value="Marijampolės apskritis" />
+                                     <String fx:value="Tauragės apskritis" />
+                                     <String fx:value="Utenos apskritis" />
+                                     <String fx:value="Panevėžio apskritis" />
+                                     <String fx:value="Alytaus apskritis" />
+                                 </FXCollections>
+                             </items>
+                         </ChoiceBox>
+                        <Label layoutX="356.0" layoutY="19.0" text="Mano magnetukai" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Žemėlapis">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="489.0" prefWidth="600.0">
+                     <children>
+                        <ListView fx:id="regionsListOfView" layoutX="24.0" layoutY="21.0" onMouseClicked="#showRegionMagnets" prefHeight="307.0" prefWidth="258.0" />
+                        <ListView fx:id="regionMagnets" layoutX="346.0" layoutY="69.0" prefHeight="234.0" prefWidth="210.0" />
+                        <ChoiceBox layoutX="346.0" layoutY="21.0" prefHeight="26.0" prefWidth="209.0" value="Visi duomenis">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Visi duomenis" />
+                                 <String fx:value="Vilniaus apskritis" />
+                                 <String fx:value="Kauno apskritis" />
+                                 <String fx:value="Klaipėdos apskritis" />
+                                 <String fx:value="Šiaulių apskritis" />
+                                 <String fx:value="Telšių apskritis" />
+                                 <String fx:value="Marijampolės apskritis" />
+                                 <String fx:value="Tauragės apskritis" />
+                                 <String fx:value="Utenos apskritis" />
+                                 <String fx:value="Panevėžio apskritis" />
+                                 <String fx:value="Alytaus apskritis" />
+                              </FXCollections>
+                           </items>
+                        </ChoiceBox>
+                        <Button fx:id="showButton" layoutX="381.0" layoutY="316.0" mnemonicParsing="false" onAction="#goToMagnetInfo" text="Magnetuko informacija" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
