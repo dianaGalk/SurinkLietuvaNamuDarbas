@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
 
         BigDataManager bigDataManager = new BigDataManager();
 
-
+        //test
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load());
