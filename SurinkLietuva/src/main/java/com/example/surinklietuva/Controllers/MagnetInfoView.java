@@ -26,14 +26,12 @@ public class MagnetInfoView {
     private Magnet magnet;
     private User user;
     private List<User> listOfUsers;
-    private List<Magnet> missingMagnets;
     private BigDataManager bigDataManager = new BigDataManager();
 
     public void setData(List<User> listOfUsers, User user, Magnet magnet) throws FileNotFoundException {
         this.listOfUsers = listOfUsers;
         this.user = user;
         this.magnet = magnet;
-        missingMagnets = bigDataManager.getAllMagnetsListFromDataBase();
         fillTables();
     }
 
