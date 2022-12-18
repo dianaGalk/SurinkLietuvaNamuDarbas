@@ -26,7 +26,6 @@ public class MagnetInfoView {
     private Magnet magnet;
     private User user;
     private List<User> listOfUsers;
-    private BigDataManager bigDataManager = new BigDataManager();
 
     public void setData(List<User> listOfUsers, User user, Magnet magnet) throws FileNotFoundException {
         this.listOfUsers = listOfUsers;
@@ -38,7 +37,7 @@ public class MagnetInfoView {
     private void fillTables() throws FileNotFoundException {
         String imgFolderPath = System.getProperty("user.dir") + "\\src\\main\\java\\com\\example\\surinklietuva\\Images";
         regionImage.setImage(null);
-        Image img = null;
+        Image img;
         switch (magnet.getArea()) {
             case "Vilniaus apskritis":
                 img = new Image(new FileInputStream(imgFolderPath + "\\Vilnius.png"));
@@ -71,15 +70,15 @@ public class MagnetInfoView {
                 img = new Image(new FileInputStream(imgFolderPath + "\\Alytus.png"));
                 break;
             default:
-                int i = 0;
+                img=null;
         }
         regionImage.setImage(img);
         magnetInfo.setText(magnet.getName() + " " + magnet.getArea());
-        String shops = "";
+        StringBuilder shops = new StringBuilder();
         for (String s : magnet.getListOfShops()) {
-            shops += s + "\n";
+            shops.append(s).append("\n");
         }
-        magnetShops.setText(shops);
+        magnetShops.setText(shops.toString());
     }
 
     public void returnToPrevious(ActionEvent actionEvent) throws IOException {
