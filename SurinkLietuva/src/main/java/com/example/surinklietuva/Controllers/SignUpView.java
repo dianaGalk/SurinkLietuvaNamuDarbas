@@ -43,6 +43,11 @@ public class SignUpView {
     private List<User> listOfUsers;
     private final BigDataManager bigDataManager = new BigDataManager();
 
+    private static final Pattern emailPattern = Pattern.compile("^(.+)@(.+)$");
+    private static final Pattern passwordPattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{4,15}$");
+
+
+
     public void setData(List<User> listOfUsers){
         this.listOfUsers = listOfUsers;
     }
@@ -51,15 +56,11 @@ public class SignUpView {
     }
 
     public static boolean checkEmailValidation(String emailValue){
-            String regexPattern = "^(.+)@(.+)$";
-            boolean answer = Pattern.compile(regexPattern).matcher(emailValue).matches();
-            return answer;
+        return emailPattern.matcher(emailValue).matches();
     }
 
     public static boolean checkPasswordValidation(String passwordValueOfSimbols){
-        String regexPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{4,15}$";
-        boolean answer = Pattern.compile(regexPattern).matcher(passwordValueOfSimbols).matches();
-        return answer;
+        return passwordPattern.matcher(passwordValueOfSimbols).matches();
     }
 
     public void returnToPrevious(ActionEvent actionEvent) throws IOException {
