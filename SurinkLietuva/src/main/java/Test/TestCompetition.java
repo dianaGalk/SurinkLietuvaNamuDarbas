@@ -1,2 +1,2 @@
-package Test;public class TestCompetition {
+package Test;public class estCompetition {
 }

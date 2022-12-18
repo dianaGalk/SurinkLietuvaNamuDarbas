@@ -20,10 +20,8 @@ public class TestSignUp {
     @Test
     public void TestUserEmail(){
         SignUpView signUpView = new SignUpView();
-        //Assert.assertEquals(signUpView.checkEmailValidation("diana.gmail.com"),true);                 //1.1 - wrong test
-        //Assert.assertEquals(signUpView.checkEmailValidation("diana"),true);                           //1.1 - wrong test
-        Assert.assertFalse(signUpView.checkEmailValidation("diana.gmail.com"));                //1.2 - correct
-        Assert.assertTrue(signUpView.checkEmailValidation("diana@gmail.com"));                 //1.2 - correct
+        Assert.assertFalse(signUpView.checkEmailValidation("diana.gmail.com"));
+        Assert.assertTrue(signUpView.checkEmailValidation("diana@gmail.com"));
         Assert.assertFalse(signUpView.checkEmailValidation("@gmail.com"));
     }
     @Test

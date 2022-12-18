@@ -1,4 +1,4 @@
 package Test;
 
-public class TestFriendsEcosystem {
+public class estFriendsEcosystem {
 }
