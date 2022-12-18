@@ -51,8 +51,8 @@ public class MainView {
     private User user;
     private List<User> listOfUsers;
     private List<Magnet> missingMagnets;
-    private BigDataManager bigDataManager = new BigDataManager();
-    private List<String> allAreasList = Arrays.asList("Vilniaus apskritis", "Kauno apskritis", "Klaipėdos apskritis", "Šiaulių apskritis", "Telšių apskritis", "Marijampolės apskritis", "Tauragės apskritis", "Utenos apskritis", "Panevėžio apskritis", "Alytaus apskritis");
+    private final BigDataManager bigDataManager = new BigDataManager();
+    private final List<String> allAreasList = Arrays.asList("Vilniaus apskritis", "Kauno apskritis", "Klaipėdos apskritis", "Šiaulių apskritis", "Telšių apskritis", "Marijampolės apskritis", "Tauragės apskritis", "Utenos apskritis", "Panevėžio apskritis", "Alytaus apskritis");
 
     public void setData(List<User> listOfUsers, User user) throws FileNotFoundException {
         this.listOfUsers = listOfUsers;
