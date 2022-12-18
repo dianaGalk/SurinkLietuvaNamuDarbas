@@ -41,31 +41,25 @@ public class SignUpView {
     public Button signUpButton;
 
     private List<User> listOfUsers;
-    private BigDataManager bigDataManager = new BigDataManager();
+    private final BigDataManager bigDataManager = new BigDataManager();
 
     public void setData(List<User> listOfUsers){
         this.listOfUsers = listOfUsers;
     }
     public boolean checkPasswordLength(String passValue){
-        if(passValue.length()>15 || passValue.length()<4){
-            return false;
-        }
-        return true;
+        return passValue.length() <= 15 && passValue.length() >= 4;
     }
 
-    //private static final String regexPattern = "^(.+)@(.+)$";
-    public static boolean checkEmailValidation(String emailValue){          //1.1
-            String regexPattern = "^(.+)@(.+)$";                            //1.2
-            return Pattern.compile(regexPattern)                            //1.2
-                    .matcher(emailValue)                                    //1.2
-                .matches();                                                 //1.2
+    public static boolean checkEmailValidation(String emailValue){
+            String regexPattern = "^(.+)@(.+)$";
+            boolean answer = Pattern.compile(regexPattern).matcher(emailValue).matches();
+            return answer;
     }
 
     public static boolean checkPasswordValidation(String passwordValueOfSimbols){
         String regexPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{4,15}$";
-        return Pattern.compile(regexPattern)
-                .matcher(passwordValueOfSimbols)
-                .matches();
+        boolean answer = Pattern.compile(regexPattern).matcher(passwordValueOfSimbols).matches();
+        return answer;
     }
 
     public void returnToPrevious(ActionEvent actionEvent) throws IOException {

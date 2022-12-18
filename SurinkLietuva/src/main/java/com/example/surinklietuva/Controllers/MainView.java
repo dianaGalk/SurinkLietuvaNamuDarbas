@@ -188,7 +188,7 @@ public class MainView {
 
     public void checkboxFunc() throws FileNotFoundException {
         String regionName = regionChoiceBox.getValue().toString();
-        if (regionName.equals("Visi duomenis")) {
+        if ("Visi duomenis".equals(regionName)) {
             fillTables();
         } else if (regionName != null) {
             missingMagnetsListOfView.getItems().clear();

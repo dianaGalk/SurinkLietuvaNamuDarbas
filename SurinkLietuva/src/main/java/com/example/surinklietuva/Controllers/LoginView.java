@@ -29,7 +29,6 @@ public class LoginView {
     public Button loginButton;
 
     private List<User> listOfUsers;
-    private BigDataManager bigDataManager;
 
     public void setData(List<User> listOfUsers) {
         this.listOfUsers = listOfUsers;
@@ -40,7 +39,7 @@ public class LoginView {
         currentUser = listOfUsers.stream()
                 .filter((u -> u.getUsername()
                         .equals(loginField.getText()) && (u.getPassword().equals(passwordField.getText())))).collect(Collectors.toList());
-        if (currentUser.size() == 0) {
+        if (currentUser.isEmpty()) {
             AllertBox.display("Klaida", "Duomenų bazėje nėra tokio vartotojo");
         } else {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("main-view.fxml"));

@@ -9,16 +9,15 @@ public class Magnet {
     List<String> listOfShops;
 
     public Magnet() {
+        this.area = "";
+        this.name = "";
+        this.listOfShops = null;
     }
 
     public Magnet(String area, String name, List<String> listOfShops) {
         this.area = area;
         this.name = name;
         this.listOfShops = listOfShops;
-    }
-
-    public void printMagnetInfo() {
-        System.out.println(getArea() + " " + getName() + " " + getListOfShops());
     }
 
     public String getArea() {

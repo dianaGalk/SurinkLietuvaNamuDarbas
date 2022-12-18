@@ -11,6 +11,12 @@ public class User {
     private List<Magnet> magnetList;
 
     public User() {
+        this.name = "";
+        this.surname = "";
+        this.username = "";
+        this.mail = "";
+        this.password = "";
+        this.magnetList =null;
     }
 
     public User(String name, String surname, String username, String mail, String password, List<Magnet> magnetList) {
